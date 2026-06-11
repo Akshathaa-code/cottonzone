@@ -16,9 +16,9 @@ export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Shop Premium Cotton Shirts — Cotton Zone" },
-      { name: "description", content: "Browse our full collection of 100% cotton shirts, formal, casual and ethnic men's wear." },
+      { name: "description", content: "Browse our collection of 100% pure cotton men's shirts — formal and casual, self-stitched in Coimbatore." },
       { property: "og:title", content: "Shop — Cotton Zone" },
-      { property: "og:description", content: "Premium 100% cotton shirts and men's wear." },
+      { property: "og:description", content: "Premium 100% pure cotton men's shirts, formal & casual." },
       { property: "og:url", content: "/shop" },
     ],
     links: [{ rel: "canonical", href: "/shop" }],

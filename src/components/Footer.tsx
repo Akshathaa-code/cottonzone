@@ -10,7 +10,7 @@ export function Footer() {
             Cotton <span className="text-accent italic">Zone</span>
           </div>
           <p className="text-sm text-navy-foreground/70 mt-4 leading-relaxed">
-            Premium 100% cotton shirts and men's wear, crafted in Coimbatore. A family-run heritage now woven for a new generation.
+            Premium 100% pure cotton men's shirts — formal & casual, self-stitched in our Coimbatore workshop. A family-run heritage now woven for a new generation.
           </p>
           <div className="flex gap-3 mt-6">
             <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></a>
@@ -25,7 +25,7 @@ export function Footer() {
             <li><Link to="/shop" className="hover:text-accent">All Products</Link></li>
             <li><Link to="/shop" search={{ category: "formal" }} className="hover:text-accent">Formal Shirts</Link></li>
             <li><Link to="/shop" search={{ category: "casual" }} className="hover:text-accent">Casual Shirts</Link></li>
-            <li><Link to="/shop" search={{ category: "ethnic" }} className="hover:text-accent">Ethnic Wear</Link></li>
+            
           </ul>
         </div>
 
