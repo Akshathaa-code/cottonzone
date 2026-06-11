@@ -9,7 +9,7 @@ import { ArrowRight, Award, Leaf, Truck, ShieldCheck, MapPin } from "lucide-reac
 import heroImg from "@/assets/hero.jpg";
 import formalImg from "@/assets/collection-formal.jpg";
 import casualImg from "@/assets/collection-casual.jpg";
-import ethnicImg from "@/assets/collection-ethnic.jpg";
+
 import storeImg from "@/assets/store-interior.jpg";
 import craftImg from "@/assets/craftsmanship.jpg";
 
@@ -22,9 +22,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Cotton Zone — Premium Cotton Shirts Crafted for Comfort" },
-      { name: "description", content: "Discover 100% cotton shirts and men's wear, woven with care in Coimbatore. Shop premium formal, casual & ethnic styles online." },
+      { name: "description", content: "Premium 100% pure cotton shirts for men — formal & casual, self-stitched in our Coimbatore workshop. Shop Cotton Zone online." },
       { property: "og:title", content: "Cotton Zone — Premium Cotton Shirts Crafted for Comfort" },
-      { property: "og:description", content: "100% cotton shirts and men's wear, woven with care in Coimbatore." },
+      { property: "og:description", content: "100% pure cotton men's shirts, self-stitched in Coimbatore. Formal & casual." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -96,15 +96,15 @@ function FeaturedCollections() {
   const collections = [
     { name: "Formal Shirts", desc: "For the boardroom and beyond.", img: formalImg, cat: "formal" },
     { name: "Casual Shirts", desc: "Weekend ease, weekday polish.", img: casualImg, cat: "casual" },
-    { name: "\n", desc: "\n", img: ethnicImg, cat: "ethnic" },
   ];
   return (
     <section className="container-luxe py-20">
       <div className="text-center mb-12">
-        <span className="text-xs uppercase tracking-[0.3em] text-accent">Collections</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Shop by Occasion</h2>
+        <span className="text-xs uppercase tracking-[0.3em] text-accent">Our Collections</span>
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Formal & Casual. Pure Cotton.</h2>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto">Every shirt cut and stitched in our own Coimbatore workshop.</p>
       </div>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {collections.map((c) => (
           <Link key={c.cat} to="/shop" className="group block">
             <div className="aspect-[4/5] overflow-hidden bg-muted">
