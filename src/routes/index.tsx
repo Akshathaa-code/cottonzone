@@ -62,7 +62,7 @@ function Hero() {
             for Comfort.
           </h1>
           <p className="text-muted-foreground mt-6 max-w-lg leading-relaxed">
-            From our family-run store in RS Puram to your wardrobe — 100% breathable cotton, tailored for the Indian gentleman who values quality, softness, and an honest craft.
+            From our family-run store in RS Puram to your wardrobe — 100% breathable pure cotton, tailored for the Indian gentleman who values quality, softness, and an honest craft.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Button asChild className="rounded-none h-12 px-8 bg-navy text-navy-foreground hover:bg-navy/90 text-xs tracking-[0.2em] uppercase">
@@ -96,7 +96,7 @@ function FeaturedCollections() {
   const collections = [
     { name: "Formal Shirts", desc: "For the boardroom and beyond.", img: formalImg, cat: "formal" },
     { name: "Casual Shirts", desc: "Weekend ease, weekday polish.", img: casualImg, cat: "casual" },
-    { name: "Ethnic Wear", desc: "Tradition, tailored.", img: ethnicImg, cat: "ethnic" },
+    { name: "\n", desc: "\n", img: ethnicImg, cat: "ethnic" },
   ];
   return (
     <section className="container-luxe py-20">
