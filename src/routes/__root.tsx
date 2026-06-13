@@ -61,6 +61,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#1a2547" },
+      { property: "og:title", content: "Cotton Zone — Premium Cotton Shirts | Coimbatore" },
+      { name: "twitter:title", content: "Cotton Zone — Premium Cotton Shirts | Coimbatore" },
+      { property: "og:description", content: "Premium 100% cotton shirts and men's wear, crafted in Coimbatore. Shop online or visit our RS Puram store." },
+      { name: "twitter:description", content: "Premium 100% cotton shirts and men's wear, crafted in Coimbatore. Shop online or visit our RS Puram store." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8c688eed-424a-4848-a964-99f2f171aaad/id-preview-6725da49--1486d43b-c087-4772-be21-e1c90f45d8ab.lovable.app-1781361506689.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8c688eed-424a-4848-a964-99f2f171aaad/id-preview-6725da49--1486d43b-c087-4772-be21-e1c90f45d8ab.lovable.app-1781361506689.png" },
     ],
       links: [
       { rel: "stylesheet", href: appCss },
