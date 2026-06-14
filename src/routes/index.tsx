@@ -84,7 +84,7 @@ function Hero() {
           </div>
           <div className="hidden md:block absolute -bottom-6 -left-6 bg-background p-6 shadow-soft max-w-xs">
             <p className="font-display text-2xl leading-tight">"Softer than anything I've ever owned."</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-3">— A customer in Bengaluru</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-3">— A CUSTOMER IN COIMBATORE</p>
           </div>
         </div>
       </div>
