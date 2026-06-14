@@ -160,7 +160,7 @@ function WhyChoose() {
     { icon: Leaf, t: "100% Pure Cotton", d: "Sourced and woven in India, breathable for every season." },
     { icon: Award, t: "Heritage Craft", d: "Decades of tailoring expertise from our Coimbatore atelier." },
     { icon: ShieldCheck, t: "Built to Last", d: "Reinforced stitching, pre-shrunk fabric, true colours." },
-    { icon: Truck, t: "Pan-India Delivery", d: "Free shipping above ₹1,499. Easy 7-day exchange." },
+    { icon: Truck, t: "Pan-India Delivery", d: "Free shipping above ₹1,499. Across India" },
   ];
   return (
     <section className="container-luxe py-20">
