@@ -9,10 +9,12 @@ export function Footer() {
           <div className="font-display text-2xl">
             Cotton <span className="text-accent italic">Zone</span>
           </div>
+          <p className="text-[10px] tracking-[0.3em] uppercase text-accent mt-2">Your Special Identity</p>
           <p className="text-sm text-navy-foreground/70 mt-4 leading-relaxed">
-            Premium 100% pure cotton men's shirts — formal & casual, self-stitched in our Coimbatore workshop. A family-run heritage now woven for a new generation.
+            Premium 100% pure cotton men's shirts — formal & casual, crafted in Coimbatore. A trusted family-run boutique on West Sambandam Road, RS Puram.
           </p>
           <div className="flex gap-3 mt-6">
+
             <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></a>
             <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook className="h-5 w-5" /></a>
             <a href="#" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube className="h-5 w-5" /></a>
@@ -43,11 +45,12 @@ export function Footer() {
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] text-accent mb-4">Visit Us</h4>
           <ul className="space-y-3 text-sm text-navy-foreground/80">
-            <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> RS Puram, Coimbatore<br/>Tamil Nadu 641002</li>
-            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> +91 98765 43210</li>
-            <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> hello@cottonzone.in</li>
+            <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> 82, West Sambandam Road,<br/>RS Puram, Coimbatore<br/>Tamil Nadu 641002</li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> <span><a href="tel:+919842267512" className="hover:text-accent block">+91 98422 67512</a><a href="tel:+914224365868" className="hover:text-accent block">0422-4365868</a></span></li>
+            <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" /> <a href="mailto:orbitmurthy@gmail.com" className="hover:text-accent">orbitmurthy@gmail.com</a></li>
           </ul>
           <p className="text-xs text-navy-foreground/60 mt-4">Mon – Sat · 10:00 AM – 9:00 PM</p>
+
         </div>
       </div>
       <div className="border-t border-navy-foreground/10">

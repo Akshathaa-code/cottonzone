@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, User } from "lucide-react";
+import { Menu, Search, User, Heart } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -19,8 +19,8 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="bg-navy text-navy-foreground text-xs">
         <div className="container-luxe flex justify-center md:justify-between items-center h-9">
-          <span className="hidden md:inline">Free shipping across India on orders above ₹1,499</span>
-          <span>Visit our store at RS Puram, Coimbatore</span>
+          <span className="hidden md:inline">Free shipping across India on orders above ₹1,499  ·  Call +91 98422 67512</span>
+          <span>82, West Sambandam Road, RS Puram, Coimbatore</span>
         </div>
       </div>
       <div className="container-luxe flex items-center justify-between h-16 md:h-20">
@@ -64,8 +64,9 @@ export function Header() {
             Cotton <span className="text-accent italic">Zone</span>
           </span>
           <span className="hidden md:block text-[10px] tracking-[0.3em] uppercase text-muted-foreground mt-0.5">
-            Coimbatore · Since
+            Your Special Identity
           </span>
+
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 flex-1 justify-end">
@@ -85,11 +86,15 @@ export function Header() {
           <Button variant="ghost" size="icon" aria-label="Search" className="hidden md:inline-flex">
             <Search className="h-5 w-5" />
           </Button>
+          <Button asChild variant="ghost" size="icon" aria-label="Wishlist">
+            <Link to="/wishlist"><Heart className="h-5 w-5" /></Link>
+          </Button>
           <Button variant="ghost" size="icon" aria-label="Account" className="hidden md:inline-flex">
             <User className="h-5 w-5" />
           </Button>
           <CartDrawer />
         </div>
+
       </div>
     </header>
   );
