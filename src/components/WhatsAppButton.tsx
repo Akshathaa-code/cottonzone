@@ -1,5 +1,6 @@
-const PHONE = "919876543210"; // placeholder
+const PHONE = "919842267512"; // Cotton Zone — +91 98422 67512
 const MSG = encodeURIComponent("Hi Cotton Zone, I'd like to know more about your shirts.");
+
 
 export function WhatsAppButton() {
   return (
