@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, User } from "lucide-react";
+import { Menu, Search, User, Heart } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -86,11 +86,15 @@ export function Header() {
           <Button variant="ghost" size="icon" aria-label="Search" className="hidden md:inline-flex">
             <Search className="h-5 w-5" />
           </Button>
+          <Button asChild variant="ghost" size="icon" aria-label="Wishlist">
+            <Link to="/wishlist"><Heart className="h-5 w-5" /></Link>
+          </Button>
           <Button variant="ghost" size="icon" aria-label="Account" className="hidden md:inline-flex">
             <User className="h-5 w-5" />
           </Button>
           <CartDrawer />
         </div>
+
       </div>
     </header>
   );

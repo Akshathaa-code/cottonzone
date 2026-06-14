@@ -1,12 +1,15 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Loader2, Truck, Leaf, ShieldCheck, RotateCcw } from "lucide-react";
+import { Loader2, Truck, Leaf, ShieldCheck, RotateCcw, Heart } from "lucide-react";
 import { fetchProductByHandle, formatPrice } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
+import { useWishlistStore, useRecentStore } from "@/stores/wishlistStore";
+import { ProductCard } from "@/components/ProductCard";
 import { toast } from "sonner";
+
 
 const productQuery = (handle: string) =>
   queryOptions({
@@ -58,11 +61,21 @@ function ProductPage() {
   const { handle } = Route.useParams();
   const { data: product } = useSuspenseQuery(productQuery(handle));
   const [imgIdx, setImgIdx] = useState(0);
+  const [zoom, setZoom] = useState<{ x: number; y: number } | null>(null);
   const [variantId, setVariantId] = useState(product.variants.edges[0]?.node.id);
   const variant = product.variants.edges.find((v) => v.node.id === variantId)?.node || product.variants.edges[0]?.node;
   const addItem = useCartStore((s) => s.addItem);
   const isLoading = useCartStore((s) => s.isLoading);
   const getCheckoutUrl = useCartStore((s) => s.getCheckoutUrl);
+  const toggleWish = useWishlistStore((s) => s.toggle);
+  const wished = useWishlistStore((s) => s.ids.includes(product.id));
+  const addRecent = useRecentStore((s) => s.add);
+  const recent = useRecentStore((s) => s.items.filter((p) => p.node.id !== product.id).slice(0, 4));
+
+  useEffect(() => {
+    addRecent({ node: product });
+  }, [product.id]);
+
 
   const handleAdd = async () => {
     if (!variant) return;
