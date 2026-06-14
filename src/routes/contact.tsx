@@ -28,7 +28,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const WA = "919876543210";
+const WA = "919842267512";
 
 function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -90,16 +90,19 @@ function ContactPage() {
               <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium">Cotton Zone Flagship</p>
-                <p className="text-sm text-muted-foreground">RS Puram, Coimbatore<br/>Tamil Nadu 641002, India</p>
+                <p className="text-sm text-muted-foreground">82, West Sambandam Road,<br/>RS Puram, Coimbatore<br/>Tamil Nadu 641002, India</p>
               </div>
             </div>
             <div className="flex gap-4">
               <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-              <a href="tel:+919876543210" className="text-sm hover:text-accent">+91 98765 43210</a>
+              <div className="text-sm">
+                <a href="tel:+919842267512" className="hover:text-accent block">+91 98422 67512</a>
+                <a href="tel:+914224365868" className="hover:text-accent block">0422-4365868</a>
+              </div>
             </div>
             <div className="flex gap-4">
               <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-              <a href="mailto:hello@cottonzone.in" className="text-sm hover:text-accent">hello@cottonzone.in</a>
+              <a href="mailto:orbitmurthy@gmail.com" className="text-sm hover:text-accent">orbitmurthy@gmail.com</a>
             </div>
             <div className="flex gap-4">
               <Clock className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
@@ -108,6 +111,7 @@ function ContactPage() {
                 <p className="text-muted-foreground">Sunday · Closed</p>
               </div>
             </div>
+
           </div>
 
           <div className="flex flex-wrap gap-3 mt-8">
@@ -126,11 +130,12 @@ function ContactPage() {
           <div className="mt-8 aspect-[4/3] overflow-hidden">
             <iframe
               title="Cotton Zone location"
-              src="https://www.google.com/maps?q=RS+Puram+Coimbatore&output=embed"
+              src="https://www.google.com/maps?q=82+West+Sambandam+Road+RS+Puram+Coimbatore&output=embed"
               className="w-full h-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+
           </div>
         </div>
       </section>
