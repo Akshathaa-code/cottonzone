@@ -71,11 +71,16 @@ function ProductPage() {
   const wished = useWishlistStore((s) => s.ids.includes(product.id));
   const addRecent = useRecentStore((s) => s.add);
   const recentItems = useRecentStore((s) => s.items);
-  const recent = useMemo(() => recentItems.filter((p) => p.node.id !== product.id).slice(0, 4), [recentItems, product.id]);
+  const recent = useMemo(
+    () => recentItems
+      .filter((p) => p?.node?.id && p.node.id !== product.id && p.node.images?.edges && p.node.variants?.edges && p.node.priceRange?.minVariantPrice)
+      .slice(0, 4),
+    [recentItems, product.id],
+  );
 
   useEffect(() => {
     addRecent({ node: product });
-  }, [product.id]);
+  }, [addRecent, product]);
 
 
   const handleAdd = async () => {
