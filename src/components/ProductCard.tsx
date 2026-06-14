@@ -1,13 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, Heart } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { useWishlistStore } from "@/stores/wishlistStore";
 import { formatPrice, type ShopifyProduct } from "@/lib/shopify";
 import { toast } from "sonner";
 
 export function ProductCard({ product }: { product: ShopifyProduct }) {
   const addItem = useCartStore((s) => s.addItem);
   const isLoading = useCartStore((s) => s.isLoading);
+  const toggleWish = useWishlistStore((s) => s.toggle);
+  const wished = useWishlistStore((s) => s.ids.includes(product.node.id));
   const node = product.node;
   const img = node.images.edges[0]?.node;
   const img2 = node.images.edges[1]?.node;
@@ -26,6 +29,12 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
       selectedOptions: variant.selectedOptions || [],
     });
     toast.success("Added to bag", { description: node.title, position: "top-center" });
+  };
+
+  const handleWish = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleWish(product);
+    toast.success(wished ? "Removed from wishlist" : "Saved to wishlist", { position: "top-center" });
   };
 
   return (
@@ -51,6 +60,13 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
             className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           />
         )}
+        <button
+          onClick={handleWish}
+          aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
+          className="absolute top-3 right-3 h-9 w-9 rounded-full bg-background/85 backdrop-blur flex items-center justify-center hover:bg-background transition-colors"
+        >
+          <Heart className={`h-4 w-4 ${wished ? "fill-accent text-accent" : "text-foreground"}`} />
+        </button>
         <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity">
           <Button
             onClick={handleAdd}
