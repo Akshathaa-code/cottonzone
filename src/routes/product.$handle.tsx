@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Loader2, Truck, Leaf, ShieldCheck, RotateCcw, Heart } from "lucide-react";
@@ -70,7 +70,8 @@ function ProductPage() {
   const toggleWish = useWishlistStore((s) => s.toggle);
   const wished = useWishlistStore((s) => s.ids.includes(product.id));
   const addRecent = useRecentStore((s) => s.add);
-  const recent = useRecentStore((s) => s.items.filter((p) => p.node.id !== product.id).slice(0, 4));
+  const recentItems = useRecentStore((s) => s.items);
+  const recent = useMemo(() => recentItems.filter((p) => p.node.id !== product.id).slice(0, 4), [recentItems, product.id]);
 
   useEffect(() => {
     addRecent({ node: product });
