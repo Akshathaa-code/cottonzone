@@ -103,15 +103,24 @@ function ProductPage() {
       </nav>
       <div className="grid md:grid-cols-2 gap-10 md:gap-16">
         <div>
-          <div className="aspect-[4/5] bg-muted overflow-hidden mb-4">
+          <div
+            className="relative aspect-[4/5] bg-muted overflow-hidden mb-4 cursor-zoom-in"
+            onMouseMove={(e) => {
+              const r = e.currentTarget.getBoundingClientRect();
+              setZoom({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100 });
+            }}
+            onMouseLeave={() => setZoom(null)}
+          >
             {product.images.edges[imgIdx] && (
               <img
                 src={product.images.edges[imgIdx].node.url}
                 alt={product.images.edges[imgIdx].node.altText || product.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover transition-transform duration-300"
+                style={zoom ? { transform: `scale(2)`, transformOrigin: `${zoom.x}% ${zoom.y}%` } : undefined}
               />
             )}
           </div>
+
           {product.images.edges.length > 1 && (
             <div className="grid grid-cols-5 gap-2">
               {product.images.edges.map((img, i) => (
@@ -163,7 +172,16 @@ function ProductPage() {
               className="flex-1 h-12 rounded-none border-navy text-navy hover:bg-accent hover:border-accent hover:text-accent-foreground text-xs tracking-[0.2em] uppercase">
               Buy Now
             </Button>
+            <Button
+              onClick={() => { toggleWish({ node: product }); toast.success(wished ? "Removed from wishlist" : "Saved to wishlist", { position: "top-center" }); }}
+              variant="outline"
+              aria-label="Toggle wishlist"
+              className="h-12 w-12 rounded-none border-border hover:border-accent"
+            >
+              <Heart className={`h-4 w-4 ${wished ? "fill-accent text-accent" : ""}`} />
+            </Button>
           </div>
+
 
           <div className="grid grid-cols-2 gap-4 mt-8 text-sm">
             <div className="flex items-center gap-2"><Leaf className="h-4 w-4 text-accent"/> 100% Cotton</div>
@@ -200,6 +218,17 @@ function ProductPage() {
           </Accordion>
         </div>
       </div>
+
+      {recent.length > 0 && (
+        <div className="mt-24">
+          <span className="text-xs uppercase tracking-[0.3em] text-accent">Recently Viewed</span>
+          <h2 className="font-display text-3xl md:text-4xl mt-3 mb-10">Pick up where you left off</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+            {recent.map((p) => <ProductCard key={p.node.id} product={p} />)}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
+
