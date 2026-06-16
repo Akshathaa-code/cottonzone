@@ -7,10 +7,10 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { fetchProducts } from "@/lib/shopify";
 import { ArrowRight, Award, Leaf, Truck, ShieldCheck, MapPin } from "lucide-react";
 import heroAsset from "@/assets/cotton-zone-hero.asset.json";
-import formalAsset from "@/assets/cotton-zone-shelves.asset.json";
 import casualAsset from "@/assets/cotton-zone-interior.asset.json";
 import storeAsset from "@/assets/cotton-zone-storefront.asset.json";
 import craftAsset from "@/assets/cotton-zone-night-store.asset.json";
+import formalImg from "@/assets/cotton-zone-formal-shirts.jpg";
 
 const productsQuery = queryOptions({
   queryKey: ["products", "featured"],
