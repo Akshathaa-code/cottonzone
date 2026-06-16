@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import storeImg from "@/assets/store-interior.jpg";
-import craftImg from "@/assets/craftsmanship.jpg";
-import heroImg from "@/assets/hero.jpg";
+import storeAsset from "@/assets/cotton-zone-interior.asset.json";
+import craftAsset from "@/assets/cotton-zone-storefront.asset.json";
+import heroAsset from "@/assets/cotton-zone-shelves.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "Our Story — Cotton Zone" },
       { property: "og:description", content: "A family-run heritage of premium cotton shirts in Coimbatore." },
       { property: "og:url", content: "/about" },
-      { property: "og:image", content: storeImg },
+      { property: "og:image", content: storeAsset.url },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),
@@ -33,7 +33,7 @@ function AboutPage() {
 
       <section className="container-luxe py-20 grid md:grid-cols-2 gap-12 items-center">
         <div className="aspect-[4/5] overflow-hidden">
-          <img src={craftImg} alt="Craftsmanship" loading="lazy" className="w-full h-full object-cover" />
+          <img src={craftAsset.url} alt="Cotton Zone storefront in daylight" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
           <span className="text-xs uppercase tracking-[0.3em] text-accent">Heritage & Trust</span>
@@ -63,10 +63,10 @@ function AboutPage() {
         <h2 className="font-display text-3xl md:text-4xl text-center mb-10">Inside our Coimbatore boutique</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <div className="md:col-span-2 aspect-[16/10] overflow-hidden">
-            <img src={storeImg} alt="Store interior" loading="lazy" className="w-full h-full object-cover" />
+            <img src={storeAsset.url} alt="Inside Cotton Zone with shelves of folded shirts" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-square md:aspect-auto overflow-hidden">
-            <img src={heroImg} alt="Cotton Zone shirts" loading="lazy" className="w-full h-full object-cover" />
+            <img src={heroAsset.url} alt="Shelves of neatly arranged Cotton Zone shirts" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
