@@ -93,7 +93,7 @@ function Hero() {
 
 function FeaturedCollections() {
   const collections = [
-    { name: "Formal Shirts", desc: "Classic stacks and crisp cottons from our shelves.", img: formalAsset.url, cat: "formal" },
+    { name: "Formal Shirts", desc: "Classic stacks and crisp cottons from our shelves.", img: formalImg, cat: "formal" },
     { name: "Casual Shirts", desc: "Easy everyday picks from inside our shop.", img: casualAsset.url, cat: "casual" },
   ];
   return (
