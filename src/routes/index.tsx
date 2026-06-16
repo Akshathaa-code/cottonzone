@@ -10,7 +10,7 @@ import heroAsset from "@/assets/cotton-zone-hero.asset.json";
 import casualAsset from "@/assets/cotton-zone-interior.asset.json";
 import storeAsset from "@/assets/cotton-zone-storefront.asset.json";
 import craftAsset from "@/assets/cotton-zone-night-store.asset.json";
-import formalImg from "@/assets/cotton-zone-formal-shirts.jpg";
+import formalImg from "@/assets/image.png";
 
 const productsQuery = queryOptions({
   queryKey: ["products", "featured"],
