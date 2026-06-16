@@ -6,12 +6,11 @@ import { ProductCard } from "@/components/ProductCard";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { fetchProducts } from "@/lib/shopify";
 import { ArrowRight, Award, Leaf, Truck, ShieldCheck, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import formalImg from "@/assets/collection-formal.jpg";
-import casualImg from "@/assets/collection-casual.jpg";
-
-import storeImg from "@/assets/store-interior.jpg";
-import craftImg from "@/assets/craftsmanship.jpg";
+import heroAsset from "@/assets/cotton-zone-hero.asset.json";
+import formalAsset from "@/assets/cotton-zone-shelves.asset.json";
+import casualAsset from "@/assets/cotton-zone-interior.asset.json";
+import storeAsset from "@/assets/cotton-zone-storefront.asset.json";
+import craftAsset from "@/assets/cotton-zone-night-store.asset.json";
 
 const productsQuery = queryOptions({
   queryKey: ["products", "featured"],
@@ -80,7 +79,7 @@ function Hero() {
         </div>
         <div className="relative">
           <div className="aspect-[3/4] overflow-hidden shadow-luxe">
-            <img src={heroImg} alt="Man in premium white cotton shirt" width={1080} height={1440} className="w-full h-full object-cover" />
+            <img src={heroAsset.url} alt="Cotton Zone storefront in Coimbatore" width={1080} height={1440} className="w-full h-full object-cover" />
           </div>
           <div className="hidden md:block absolute -bottom-6 -left-6 bg-background p-6 shadow-soft max-w-xs">
             <p className="font-display text-2xl leading-tight">"Softer than anything I've ever owned."</p>
@@ -94,8 +93,8 @@ function Hero() {
 
 function FeaturedCollections() {
   const collections = [
-    { name: "Formal Shirts", desc: "For the boardroom and beyond.", img: formalImg, cat: "formal" },
-    { name: "Casual Shirts", desc: "Weekend ease, weekday polish.", img: casualImg, cat: "casual" },
+    { name: "Formal Shirts", desc: "Classic stacks and crisp cottons from our shelves.", img: formalAsset.url, cat: "formal" },
+    { name: "Casual Shirts", desc: "Easy everyday picks from inside our shop.", img: casualAsset.url, cat: "casual" },
   ];
   return (
     <section className="container-luxe py-20">
@@ -188,7 +187,7 @@ function BrandStory() {
     <section className="bg-navy text-navy-foreground py-20">
       <div className="container-luxe grid md:grid-cols-2 gap-12 items-center">
         <div className="aspect-[4/3] overflow-hidden">
-          <img src={craftImg} alt="Tailor inspecting cotton shirt" loading="lazy" className="w-full h-full object-cover" />
+          <img src={craftAsset.url} alt="Cotton Zone shop lit up in the evening" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
           <span className="text-xs uppercase tracking-[0.3em] text-accent">Our Story</span>
@@ -226,7 +225,7 @@ function StorePreview() {
           </div>
         </div>
         <div className="order-1 md:order-2 aspect-[4/3] overflow-hidden shadow-soft">
-          <img src={storeImg} alt="Cotton Zone store interior" loading="lazy" className="w-full h-full object-cover" />
+          <img src={storeAsset.url} alt="Cotton Zone storefront on West Sambandam Road" loading="lazy" className="w-full h-full object-cover" />
         </div>
       </div>
     </section>
