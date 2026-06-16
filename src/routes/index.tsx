@@ -79,7 +79,7 @@ function Hero() {
         </div>
         <div className="relative">
           <div className="aspect-[3/4] overflow-hidden shadow-luxe">
-            <img src={heroAsset.url} alt="Cotton Zone storefront in Coimbatore" width={1080} height={1440} className="w-full h-full object-cover" />
+            <img src={heroAsset.url} alt="Cotton Zone storefront in Coimbatore" width={1080} height={1440} className="w-full h-full object-cover object-center" />
           </div>
           <div className="hidden md:block absolute -bottom-6 -left-6 bg-background p-6 shadow-soft max-w-xs">
             <p className="font-display text-2xl leading-tight">"Softer than anything I've ever owned."</p>
